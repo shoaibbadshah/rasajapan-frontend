@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Card = ({ service }) => {
     const {
         name,
@@ -18,7 +20,9 @@ const Card = ({ service }) => {
                     <div className="flex">
                         <img src="https://via.placeholder.com/50" alt="Logo" className="w-20 h-20 rounded-md mr-4" />
                         <div >
-                            <h3 className="text-xl font-bold text-blue-600">HDC</h3>
+                            <Link href="/product-details">
+                                <h3 className="text-xl font-bold text-blue-600">HDC</h3>
+                            </Link>
                             <div className="flex items-center">
                                 <span className="text-yellow-500">
                                     {'★'.repeat(Math.floor(rating))}{'☆'.repeat(5 - Math.floor(rating))}
@@ -29,9 +33,10 @@ const Card = ({ service }) => {
                             <p className="text-gray-600">{location}</p>
                         </div>
                     </div>
-                    <div>
+
+                    <Link href="/product-details">
                         <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Profile</button>
-                    </div>
+                    </Link>
 
                 </div>
 
