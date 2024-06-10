@@ -27,7 +27,8 @@ export default function Home({ services }: HomeProps) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:1337/api/products?populate=*');
+  // const res = await fetch('http://localhost:1337/api/products?populate=*');
+  const res = await fetch('https://renowned-chickens-d24d0f4a85.strapiapp.com/api/products?populate=*');
   const data = await res.json();
   console.log('my data ======', data);
 
