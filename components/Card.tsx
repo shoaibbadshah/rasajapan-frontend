@@ -1,5 +1,4 @@
 import { Service } from "@/utils/types";
-import Image from "next/image";
 import Link from "next/link";
 
 
@@ -22,7 +21,9 @@ const Card = ({ service }: { service: Service['attributes'] }) => {
             <div className="p-6">
                 <div className="flex justify-between">
                     <div className="flex">
-                        <Image src={image.data.attributes.formats.thumbnail.url} alt="Logo" width={80} height={80} className="w-20 h-20 rounded-md mr-4" />
+                        <img
+                            src={`https://rasajapan.onrender.com${image.data.attributes.formats.thumbnail.url}`}
+                            alt="Logo" className="w-20 h-20 rounded-md mr-4 object-contain border-2" />
                         <div>
                             <Link href="/product-details">
                                 <h3 className="text-xl font-bold text-blue-600">{name}</h3>

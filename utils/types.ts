@@ -73,27 +73,3 @@ export interface Service {
     };
 }
 
-
-// // types.ts
-
-// export interface DescriptionChild {
-//     type: string;
-//     text: string;
-// }
-
-// export interface Description {
-//     type: string;
-//     children: DescriptionChild[];
-// }
-
-// export interface Service {
-//     name: string;
-//     description: Description[];
-//     rating: number;
-//     review_count: number;
-//     location: string;
-//     services_offered: string[];
-//     Industries_served: string[];
-//     project_cost: string;
-//     retainer: string;
-// }
