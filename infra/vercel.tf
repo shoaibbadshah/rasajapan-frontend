@@ -13,8 +13,9 @@ provider "vercel" {
 variable "vercel_api_token" {}
 variable "env_example" {}
 
-resource "vercel_project" "rasajapan-fe" {
-  name            = "rasajapan-fe"
+
+resource "vercel_project" "rasajapan-frontend" {
+  name            = "rasajapan-frontend"
   framework       = "nextjs"
   build_command   = "yarn build"
   team_id         = "team_cUUJOF5e58em9YTg9UnbzH1n"
