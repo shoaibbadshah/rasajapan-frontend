@@ -22,7 +22,8 @@ const Card = ({ service }: { service: Service['attributes'] }) => {
                 <div className="flex justify-between">
                     <div className="flex">
                         <img
-                            src={`https://rasajapan.onrender.com${image.data.attributes.formats.thumbnail.url}`}
+                            src={`${image?.formats.thumbnail.url}`}
+                            // src={`https://rasajapan.onrender.com${image.data.attributes.formats.thumbnail.url}`}
                             alt="Logo" className="w-20 h-20 rounded-md mr-4 object-contain border-2" />
                         <div>
                             <Link href="/product/product-details">
@@ -46,7 +47,7 @@ const Card = ({ service }: { service: Service['attributes'] }) => {
                     <div className="mt-4 p-4">
                         <h4 className="font-semibold">Services Offered</h4>
                         <ul className="list-disc list-inside ml-4 px-4">
-                            {services_offered.map((service, index) => (
+                            {services_offered?.map((service, index) => (
                                 <li key={index}>{service}</li>
                             ))}
                         </ul>
@@ -58,7 +59,7 @@ const Card = ({ service }: { service: Service['attributes'] }) => {
                             <div>
                                 <h5 className="font-semibold">Industries Served</h5>
                                 <ul className="list-disc list-inside ml-4">
-                                    {Industries_served.map((industry, index) => (
+                                    {Industries_served?.map((industry, index) => (
                                         <li key={index}>{industry}</li>
                                     ))}
                                 </ul>
