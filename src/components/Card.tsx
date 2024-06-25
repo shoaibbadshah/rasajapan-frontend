@@ -22,7 +22,7 @@ const Card = ({ service }: { service: Service['attributes'] }) => {
                 <div className="flex justify-between">
                     <div className="flex">
                         <img
-                            src={`${image?.formats.thumbnail.url}`}
+                            src={`${image?.formats?.thumbnail.url}`}
                             // src={`https://rasajapan.onrender.com${image.data.attributes.formats.thumbnail.url}`}
                             alt="Logo" className="w-20 h-20 rounded-md mr-4 object-contain border-2" />
                         <div>

@@ -6,10 +6,10 @@ import Card from '@/components/Card';
 import { Service } from '@/types';
 import { useParams } from 'next/navigation';
 
-function fetchServices(): Promise<Service[]> {
-    return fetch('https://rasajapan.onrender.com/api/products?populate=*')
-        .then(res => res.json())
-        .then(data => data.data);
+async function fetchServices(): Promise<Service[]> {
+    const res = await fetch('https://rasajapan.onrender.com/api/products?populate=*');
+    const data = await res.json();
+    return data.data;
 }
 
 export default function Product() {
@@ -21,6 +21,7 @@ export default function Product() {
         const fetchData = async () => {
             try {
                 const data = await fetchServices();
+                console.log("🚀 ~ fetchData ~ data:", data)
                 setServices(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
