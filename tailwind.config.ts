@@ -15,6 +15,20 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  daisyui: {
+    themes: [
+      {
+        babyflamingo: {
+          primary: "#2B4365",
+          secondary: "#F36B7F",
+          accent: "#F6C28B",
+          neutral: "#FFE5E5",
+          "base-100": "#FFFFFF",
+        },
+      },
+    ],
+  },
+  plugins: [require("daisyui")],
 };
+
 export default config;

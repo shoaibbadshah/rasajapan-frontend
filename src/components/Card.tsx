@@ -2,7 +2,6 @@ import { Service } from "@/types";
 import Link from "next/link";
 import { Key } from "react";
 
-
 interface CardProps {
   service: Service;
 }
@@ -22,13 +21,11 @@ const Card: React.FC<CardProps> = ({ service }) => {
   } = service;
   const displayRating = rating ?? 0;
 
-  const services_offered = JSON.parse(service.services_offered)
-  const Industries_served = JSON.parse(service.Industries_served)
-
-
+  const services_offered = JSON.parse(service.services_offered);
+  const Industries_served = JSON.parse(service.Industries_served);
 
   return (
-    <div className="bg-white rounded-lg shadow-md mb-4">
+    <div className="bg-white rounded-lg shadow-sm mb-4">
       <div className="p-6">
         <div className="flex justify-between">
           <div className="flex">
@@ -65,9 +62,11 @@ const Card: React.FC<CardProps> = ({ service }) => {
           <div className="mt-4 p-4">
             <h4 className="font-semibold">Services Offered</h4>
             <ul className="list-disc list-inside ml-4 px-4">
-              {services_offered.map((service: string, index: Key | null | undefined) => (
-                <li key={index}>{service}</li>
-              ))}
+              {services_offered.map(
+                (service: string, index: Key | null | undefined) => (
+                  <li key={index}>{service}</li>
+                )
+              )}
             </ul>
             <a href="#" className="text-blue-600 mt-2 inline-block">
               See All Services
@@ -79,9 +78,11 @@ const Card: React.FC<CardProps> = ({ service }) => {
               <div>
                 <h5 className="font-semibold">Industries Served</h5>
                 <ul className="list-disc list-inside ml-4">
-                  {Industries_served?.map((industry: string, index: Key | null | undefined) => (
-                    <li key={index}>{industry}</li>
-                  ))}
+                  {Industries_served?.map(
+                    (industry: string, index: Key | null | undefined) => (
+                      <li key={index}>{industry}</li>
+                    )
+                  )}
                 </ul>
               </div>
               <div>
