@@ -79,13 +79,52 @@ const Card: React.FC<CardProps> = ({ service }) => {
                     </div>
                 </div>
             </div>
-            <div className="bg-gray-100 rounded-b-lg p-3 pl-8 shadow-md">
-                <button className="">Compare</button>
-            </div>
+          </div>
+          <Link href="/product/product-details">
+            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+              View Profile
+            </button>
+          </Link>
         </div>
-    );
+        <p className="mt-2">{description[0]?.children[0]?.text}</p>
+        <div className="flex justify-between">
+          <div className="mt-4 p-4">
+            <h4 className="font-semibold">Services Offered</h4>
+            <ul className="list-disc list-inside ml-4 px-4">
+              {services_offered.map((service, index) => (
+                <li key={index}>{service}</li>
+              ))}
+            </ul>
+            <a href="#" className="text-blue-600 mt-2 inline-block">
+              See All Services
+            </a>
+          </div>
+          <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+            <h4 className="font-semibold">Commonly Reviewed For</h4>
+            <div className="grid grid-cols-2 gap-4 mt-2">
+              <div>
+                <h5 className="font-semibold">Industries Served</h5>
+                <ul className="list-disc list-inside ml-4">
+                  {Industries_served.map((industry, index) => (
+                    <li key={index}>{industry}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h5 className="font-semibold">Project Cost</h5>
+                <p>{project_cost}</p>
+                <h5 className="font-semibold mt-2">Retainer</h5>
+                <p>{retainer}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-gray-100 rounded-b-lg p-3 pl-8 shadow-md">
+        <button className="">Compare</button>
+      </div>
+    </div>
+  );
 };
 
 export default Card;
-
-

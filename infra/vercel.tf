@@ -13,7 +13,6 @@ provider "vercel" {
 variable "vercel_api_token" {}
 variable "env_example" {}
 
-
 resource "vercel_project" "rasajapan-frontend" {
   name            = "rasajapan-frontend"
   framework       = "nextjs"
