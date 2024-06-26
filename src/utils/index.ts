@@ -1,4 +1,4 @@
-// data.js
+
 export const categories = [
     {
         category: 'BROWSE ALL SERVICE CATEGORIES',

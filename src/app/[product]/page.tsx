@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from 'react';
-import Sidebar from '@/components/Sidebar';
-import Card from '@/components/Card';
-import { Service } from '@/types';
 import { useParams } from 'next/navigation';
+import { Service } from '@/types';
+import Card from '@/components/Card';
+import Sidebar from '@/components/Sidebar';
 
 async function fetchServices(): Promise<Service[]> {
     const res = await fetch('https://rasajapan.onrender.com/api/products?populate=*');
@@ -21,7 +21,6 @@ export default function Product() {
         const fetchData = async () => {
             try {
                 const data = await fetchServices();
-                console.log("🚀 ~ fetchData ~ data:", data)
                 setServices(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -43,38 +42,49 @@ export default function Product() {
     );
 }
 
+// "use client"
 
+// import { useEffect, useState } from 'react';
+// import { useParams } from 'next/navigation';
 
-
-// import Sidebar from '@/components/Sidebar';
-// import Card from '@/components/Card';
 // import { Service } from '@/types';
-// import { useRouter } from 'next/router';
-
-
-
+// import Card from '@/components/Card';
+// import Sidebar from '@/components/Sidebar';
 
 // async function fetchServices(): Promise<Service[]> {
-//     const res = await fetch('https://rasajapan.onrender.com/api/products?populate=*'); //beta version five 
+//     const res = await fetch('https://rasajapan.onrender.com/api/products?populate=*');
 //     const data = await res.json();
 //     return data.data;
 // }
 
-// export default async function Product() {
+// export default function Product() {
+//     const params = useParams();
+//     console.log("🚀 ~ Product ~ params:", params)
+//     const [services, setServices] = useState<Service[]>([]);
 
-//     const router = useRouter();
-//     const { category } = router.query;
-//     const services = await fetchServices();
+//     useEffect(() => {
+//         const fetchData = async () => {
+//             try {
+//                 const data = await fetchServices();
+//                 setServices(data);
+//             } catch (error) {
+//                 console.error('Error fetching data:', error);
+//             }
+//         };
+
+//         fetchData();
+//     }, []);
 
 //     return (
 //         <div className="flex m-24">
 //             <Sidebar />
 //             <main className="flex-grow p-4">
 //                 {services.map((service) => (
-//                     <Card key={service.id} service={service.attributes} />
+//                     <Card key={service.id} service={service} />
 //                 ))}
 //             </main>
 //         </div>
 //     );
 // }
+
 
