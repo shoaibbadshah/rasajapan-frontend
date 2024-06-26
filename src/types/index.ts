@@ -115,8 +115,8 @@ export interface Service {
     rating: number | null;
     review_count: number | null;
     location: string | null;
-    services_offered: string | null;
-    Industries_served: string | null;
+    services_offered: [] | null;
+    Industries_served: [] | null;
     project_cost: string | null;
     retainer: string | null;
     createdAt: string;
