@@ -6,7 +6,6 @@ interface CardProps {
     service: Service;
 }
 
-// const Card = ({ service }: { service: Service['attributes'] }) => {
 const Card: React.FC<CardProps> = ({ service }) => {
     const {
         name,
@@ -89,44 +88,4 @@ const Card: React.FC<CardProps> = ({ service }) => {
 
 export default Card;
 
-
-
-
-// // Card.tsx
-// import { Service } from '@/types';
-
-// interface CardProps {
-//     service: Service;
-// }
-
-// const Card: React.FC<CardProps> = ({ service }) => {
-//     const { name, description, rating, review_count, services_offered } = service;
-//     const displayRating = rating ?? 0; // Default to 0 if rating is null
-
-//     // Convert services_offered to an array if it's a string
-//     const servicesOfferedArray = services_offered ? services_offered.split(',') : [];
-
-//     return (
-//         <div className="card">
-//             <h2>{name}</h2>
-//             {/* Render other service details as needed */}
-//             <div className="flex items-center">
-//                 <span className="text-yellow-500">
-//                     {'★'.repeat(Math.floor(displayRating))}{'☆'.repeat(5 - Math.floor(displayRating))}
-//                 </span>
-//                 <span className="ml-2 text-gray-500">{rating} ({review_count})</span>
-//             </div>
-//             <div>
-//                 <h4 className="font-semibold">Services Offered</h4>
-//                 <ul className="list-disc list-inside ml-4 px-4">
-//                     {servicesOfferedArray.map((service, index) => (
-//                         <li key={index}>{service}</li>
-//                     ))}
-//                 </ul>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Card;
 
