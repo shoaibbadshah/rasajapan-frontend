@@ -21,22 +21,24 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex-none space-x-4">
-        <div className="form-control">
+        <div className="form-control h-9">
           <input
             type="text"
             placeholder="Search"
             className="input input-bordered w-24 md:w-auto input-md"
           />
         </div>
-        <div className="dropdown dropdown-end">
-          <div role="button" className="btn btn-ghost btn-circle avatar">
+        <details className="dropdown dropdown-end">
+          <summary role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img
+              <Image
                 alt="User avatar"
                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                height={20}
+                width={20}
               />
             </div>
-          </div>
+          </summary>
           <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
             <li>
               <a className="justify-between">
@@ -51,7 +53,7 @@ const Header = () => {
               <a>Logout</a>
             </li>
           </ul>
-        </div>
+        </details>
       </div>
     </div>
   );
