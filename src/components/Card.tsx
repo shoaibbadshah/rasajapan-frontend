@@ -24,6 +24,8 @@ const Card: React.FC<CardProps> = ({ service }) => {
   const services_offered = JSON.parse(service.services_offered);
   const Industries_served = JSON.parse(service.Industries_served);
 
+
+
   return (
     <div className="bg-white rounded-lg shadow-sm mb-4">
       <div className="p-6">

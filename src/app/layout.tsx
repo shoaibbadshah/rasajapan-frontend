@@ -17,10 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Header />
       <body className={inter.className}>
-        <div className="pt-20 bg-slate-50 min-h-screen">{children}</div>
+        <Header />
+        <div className="pt-20 bg-slate-50 min-h-screen">
+          {children}
+        </div>
       </body>
     </html>
   );
 }
+
